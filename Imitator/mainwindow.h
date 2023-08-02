@@ -25,8 +25,9 @@ class MainWindow : public QMainWindow
   private:
     double m_distanceTraveled;
     double m_period;
+    double m_speed;
     double m_distance;
-    QTimer *timer = NULL;
+    QTimer *timer = nullptr;
     quint8 m_trackNumber;
     Ui::MainWindow *ui;
     double calcDistance(double fX, double fY, double fZ, double sX, double sY,

@@ -18,15 +18,14 @@ MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::goStart()
 {
-    if (timer != NULL)
+    if (timer != nullptr)
     {
         timer->stop();
     }
-    m_distanceTraveled = 0;
 
+    m_distanceTraveled = 0;
     m_trackNumber++;
-    //    char trackNumberChar = static_cast<char>(m_trackNumber);
-    //    QString trackNumberStr = QString(trackNumberChar);
+
     ui->L_trackNumberCounter->setText(QString::number(m_trackNumber));
 
     double firstX = ui->DSB_firstX->value();
@@ -37,6 +36,7 @@ void MainWindow::goStart()
     double secondY = ui->DSB_secondY->value();
     double secondZ = ui->DSB_secondZ->value();
 
+    m_speed = ui->DSB_speed->value();
     m_period = static_cast<int>(ui->DSB_period->value());
 
     m_distance =
@@ -52,11 +52,10 @@ void MainWindow::goStart()
 
 void MainWindow::calcTravel()
 {
-    m_distanceTraveled += ui->DSB_speed->value() * m_period;
+    m_distanceTraveled += m_speed * m_period;
     ui->progB->setValue(m_distanceTraveled >= m_distance ? m_distance
                                                          : m_distanceTraveled);
     qDebug() << "distance traveled: " << m_distanceTraveled << Qt::endl;
-    //    QTime::currentTime().toString("hh:mm:ss");
 
     if (m_distanceTraveled >= m_distance)
     {
