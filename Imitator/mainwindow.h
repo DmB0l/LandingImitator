@@ -4,18 +4,32 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui
+{
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
+  private slots:
+    void goStart();
+    void calcTravel();
+
+  private:
+    double m_distanceTraveled;
+    double m_period;
+    double m_distance;
+    QTimer *timer = NULL;
+    quint8 m_trackNumber;
     Ui::MainWindow *ui;
+    double calcDistance(double fX, double fY, double fZ, double sX, double sY,
+                        double sZ);
 };
 #endif // MAINWINDOW_H

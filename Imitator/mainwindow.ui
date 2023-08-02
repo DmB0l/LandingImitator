@@ -31,6 +31,87 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {  
+ background-color: #222831;  /* Black */
+}
+
+QSpinBox {
+   background-color: #222831; 
+ color: #EEEEEE;
+}
+
+QScrollBar {
+        background: #393E46;
+        border-radius: 5px;
+}
+
+QScrollBar::handle {
+        background: #00ADB5;
+        border: 2px solid #EEEEEE;
+}
+
+QGroupBox {
+    background-color: #393E46;  /* Gray */
+    color: #EEEEEE;
+    border-radius: 8px;
+    border: 2px solid #00ADB5;
+    margin-top: 6px;
+    padding-top: 8px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+}
+
+QLabel {
+    color: #EEEEEE;
+}
+
+QPushButton {
+ background-color: #820000;  
+    color: #EEEEEE;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+QPushButton::enabled { 
+    background-color:  #00ADB5;
+ }
+
+ QPushButton::hover {
+ background-color: #03C988;  
+ }
+
+QLineEdit {
+   background-color: #222831; 
+ color: #EEEEEE;
+}
+
+QTextBrowser {
+   background-color: #222831; 
+ color: #EEEEEE;
+   border: 2px solid #00ADB5;
+}
+
+ QProgressBar {
+   background-color: #222831; 
+    color: #EEEEEE;
+    border-style: solid;
+    border-color: #00ADB5;
+    border-radius: 7px;
+    border-width: 2px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+/* width: 2px;
+   margin: 3px;*/
+   background-color: #03C988;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -44,146 +125,203 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>40</height>
+        <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
     <item>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="3" column="2">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">text-align: right;
-</string>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_6"/>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label_8">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
-      </item>
-      <item row="2" column="3">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_7">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
-      </item>
-      <item row="3" column="1">
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
-      </item>
-     </layout>
+     <widget class="QGroupBox" name="groupBox">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="6" column="0">
+        <widget class="QLabel" name="L_period">
+         <property name="text">
+          <string>Период, с</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="L_firstDot">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>1-я точка</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QDoubleSpinBox" name="DSB_speed"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QDoubleSpinBox" name="DSB_period"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="L_z">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>z, м</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QDoubleSpinBox" name="DSB_secondZ"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QDoubleSpinBox" name="DSB_secondX"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QDoubleSpinBox" name="DSB_firstY"/>
+       </item>
+       <item row="3" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <widget class="QDoubleSpinBox" name="DSB_firstX"/>
+       </item>
+       <item row="8" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="L_trackNumber">
+           <property name="text">
+            <string>TrackNumber:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="L_trackNumberCounter">
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="L_y">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>y, м</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QDoubleSpinBox" name="DSB_firstZ"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="L_x">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>x,  м</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="L_speed">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Скорость, м/с</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="L_secondDot">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>2-я точка</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QDoubleSpinBox" name="DSB_secondY"/>
+       </item>
+       <item row="5" column="1">
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="1">
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
      <spacer name="verticalSpacer_2">
@@ -196,7 +334,7 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>40</height>
+        <height>20</height>
        </size>
       </property>
      </spacer>
@@ -204,17 +342,23 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QProgressBar" name="progressBar">
+       <widget class="QProgressBar" name="progB">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>450</width>
           <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>450</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="value">
@@ -223,7 +367,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="PB_start">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -231,7 +375,7 @@
          </size>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>Start</string>
         </property>
        </widget>
       </item>
