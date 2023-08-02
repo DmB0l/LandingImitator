@@ -53,7 +53,8 @@ void MainWindow::goStart()
 void MainWindow::calcTravel()
 {
     m_distanceTraveled += ui->DSB_speed->value() * m_period;
-    ui->progB->setValue(m_distanceTraveled);
+    ui->progB->setValue(m_distanceTraveled >= m_distance ? m_distance
+                                                         : m_distanceTraveled);
     qDebug() << "distance traveled: " << m_distanceTraveled << Qt::endl;
     //    QTime::currentTime().toString("hh:mm:ss");
 
