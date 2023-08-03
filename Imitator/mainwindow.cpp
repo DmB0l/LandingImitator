@@ -14,7 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->progB->setValue(0);
 }
 
-MainWindow::~MainWindow() { delete ui; }
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
 
 void MainWindow::goStart()
 {
@@ -43,7 +46,7 @@ void MainWindow::goStart()
         calcDistance(firstX, firstY, firstZ, secondX, secondY, secondZ);
     ui->progB->setMaximum(m_distance);
 
-    qDebug() << "distance: " << m_distance << Qt::endl;
+    qDebug() << "distance: " << m_distance;
 
     timer = new QTimer();
     connect(timer, &QTimer::timeout, this, &MainWindow::calcTravel);
@@ -54,8 +57,8 @@ void MainWindow::calcTravel()
 {
     m_distanceTraveled += m_speed * m_period;
     ui->progB->setValue(m_distanceTraveled >= m_distance ? m_distance
-                                                         : m_distanceTraveled);
-    qDebug() << "distance traveled: " << m_distanceTraveled << Qt::endl;
+                        : m_distanceTraveled);
+    qDebug() << "distance traveled: " << m_distanceTraveled;
 
     if (m_distanceTraveled >= m_distance)
     {
