@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PROTOCOL_H
+#define PROTOCOL_H
 
 #include <QtCore>
 
@@ -11,11 +12,6 @@ struct message
     quint8 trackNumber = 0;
 };
 
+void qweasd() {}
 
-
-
-//quint64 convert123qweq(qreal val)
-//{
-//    return static_cast<quint64>(val);
-//}
-
+#endif // PROTOCOL_H
