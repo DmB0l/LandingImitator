@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     graphScene = new GraphScene(this);
+
     graphScene->addItem(new GraphItem());
 
     graphView = ui->GV_1;

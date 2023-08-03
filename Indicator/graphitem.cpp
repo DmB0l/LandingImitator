@@ -26,35 +26,10 @@ QRectF GraphItem::boundingRect() const
 
 void GraphItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    QPainterPath path;
-    QPainterPath path;
+    painter->setPen(QPen(Qt::black, 2, Qt::SolidLine, Qt::RoundCap));
 
-    path.moveTo(-1000, 0);
-    path.lineTo(1, -3);
-    path.lineTo(1, -1);
-    path.lineTo(5, 1);
-    path.lineTo(1, 1);
-    path.lineTo(1, 4);
-    path.lineTo(2.5, 6);
-    path.lineTo(1.5, 6);
-
-    path.lineTo(0, 5);
-
-    path.lineTo(-1.5, 6);
-    path.lineTo(-2.5, 6);
-    path.lineTo(-1, 4);
-    path.lineTo(-1, 1);
-    path.lineTo(-5, 1);
-    path.lineTo(-1, -1);
-    path.lineTo(-1, -3);
-    path.lineTo(0, -5);
-
-    path.closeSubpath();
-
-    painter->setRenderHint(QPainter::Antialiasing, true);
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(m_color);
-    painter->drawPath(path);
+    painter->drawLine(-1000, 0, 1000, 0);
+    painter->drawLine(0, -1000, 0, 1000);
 }
 
 bool GraphItem::operator ==(const GraphItem& other)

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "../ProtocolFolder/protocolRealise.cpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -14,15 +15,15 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-  public:
+public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-  private slots:
+private slots:
     void goStart();
     void calcTravel();
 
-  private:
+private:
     double m_distanceTraveled;
     double m_period;
     double m_speed;
