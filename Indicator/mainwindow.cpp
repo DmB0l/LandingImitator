@@ -6,8 +6,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    m_socket = new QUdpSocket(this);
+    m_socket->bind(QHostAddress::LocalHost, 5678);
+    connect(m_socket, &QUdpSocket::readyRead, this, &MainWindow::onReadyRead);
 
-    graphScene = new GraphScene(this);
+    m_graphScene = new GraphScene(this);
 
     QLine line();
     QPen pen(Qt::black, 0.5, Qt::SolidLine, Qt::RoundCap);
@@ -18,15 +21,26 @@ MainWindow::MainWindow(QWidget *parent)
 //    graphScene->addLine(mess.x-0.5,mess.y-0.5, mess.x+0.5,mess.y+0.5, pen);
 //    graphScene->addLine(mess.x-0.5,mess.y+0.5, mess.x+0.5,mess.y-0.5, pen);
 
-    graphScene->addItem(new GraphItemNet());
+    m_graphScene->addItem(new GraphItemNet());
 
-    graphView = ui->GV_1;
-    graphView->setScene(graphScene);
-    graphView->show();
+    m_graphView = ui->GV_1;
+    m_graphView->setScene(m_graphScene);
+    m_graphView->show();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::onReadyRead()
+{
+    QByteArray buffer;
+    buffer.resize(m_socket->pendingDatagramSize());
+    qDebug() << m_socket->pendingDatagramSize();
+
+    m_socket->readDatagram(buffer.data(), buffer.size());
+
+
 }
 

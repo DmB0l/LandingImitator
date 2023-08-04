@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QUdpSocket>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -27,7 +28,8 @@ private:
     double m_period;
     double m_speed;
     double m_distance;
-    QTimer *timer = nullptr;
+    QUdpSocket *m_socket;
+    QTimer *m_timer = nullptr;
     quint8 m_trackNumber;
     Ui::MainWindow *ui;
     double calcDistance(double fX, double fY, double fZ, double sX, double sY,

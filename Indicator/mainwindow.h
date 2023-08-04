@@ -8,6 +8,8 @@
 #include "../ProtocolPriFolder/protocol.h"
 
 #include <QMainWindow>
+#include <QUdpSocket>
+#include <QByteArray>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -24,10 +26,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void onReadyRead();
+
 private:
 //    GraphItem *graphItem;
-    GraphScene *graphScene;
-    GraphView *graphView;
+    QUdpSocket *m_socket;
+    GraphScene *m_graphScene;
+    GraphView *m_graphView;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
