@@ -21,7 +21,7 @@ void GraphView::zoom(qreal factor)
 {
     QPointF oldPos = mapToScene(viewport()->rect().center());
 
-    if (transform().m22() * factor >= 0.25 && transform().m22() * factor <= 70.5)
+    if (transform().m22() * factor >= 0.1 && transform().m22() * factor <= 7.5)
     {
         scale(factor, factor);
     }

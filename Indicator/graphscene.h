@@ -5,7 +5,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QList>
 #include <QGraphicsItem>
-#include "graphitem.h"
+#include "graphitemNet.h"
 
 class GraphScene :public QGraphicsScene
 {

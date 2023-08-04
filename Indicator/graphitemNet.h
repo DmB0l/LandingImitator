@@ -6,22 +6,26 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 
-class GraphItem : public QGraphicsItem
+class GraphItemNet : public QGraphicsItem
 {
+
 public:
-    GraphItem();
+    const static int MAX_SIZE_FIELD = 10000;
+    const static int MAX_SIZE_SQUARE = 50;
 
-    GraphItem(QString icao24, QColor color, bool isSelectedUser);
+    GraphItemNet();
 
-    GraphItem(const GraphItem& other);
+    GraphItemNet(QString icao24, QColor color, bool isSelectedUser);
+
+    GraphItemNet(const GraphItemNet& other);
 
     QRectF boundingRect() const override;
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem*, QWidget* ) override;
 
-    bool operator ==(const GraphItem& other);
+    bool operator ==(const GraphItemNet& other);
 
-    void operator =(const GraphItem& other);
+    void operator =(const GraphItemNet& other);
 
 
     const QString &icao24() const;
