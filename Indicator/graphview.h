@@ -13,6 +13,15 @@ class GraphView : public QGraphicsView
 
 public:
     explicit GraphView(QWidget* parent = nullptr);
+
+protected:
+    void wheelEvent(QWheelEvent* event) override;
+
+    void mouseReleaseEvent(QMouseEvent* event) override;
+
+private:
+    void zoom(qreal factor);
+
 };
 
 #endif // GRAPHVIEW_H

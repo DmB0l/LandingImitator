@@ -48,7 +48,7 @@ void MainWindow::goStart()
 
     qDebug() << "distance: " << m_distance;
 
-    timer = new QTimer();
+    timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::calcTravel);
     timer->start(m_period * 1000);
 }

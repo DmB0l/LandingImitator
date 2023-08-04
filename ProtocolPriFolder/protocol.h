@@ -12,6 +12,6 @@ struct message
     quint8 trackNumber = 0;
 };
 
-void qweasd() {}
+void printMessage(QString message);
 
 #endif // PROTOCOL_H

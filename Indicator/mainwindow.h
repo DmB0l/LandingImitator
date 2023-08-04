@@ -5,6 +5,7 @@
 #include "graphscene.h"
 #include "graphview.h"
 #include "graphitem.h"
+#include "../ProtocolPriFolder/protocol.h"
 
 #include <QMainWindow>
 
