@@ -5,32 +5,30 @@
 #include <QUdpSocket>
 
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
+namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+  private slots:
     void goStart();
     void calcTravel();
 
-private:
-    double m_distanceTraveled;
-    double m_period;
-    double m_speed;
-    double m_distance;
-    QUdpSocket *m_socket;
+  private:
+    double m_distanceTraveled = 0;
+    double m_period = 0;
+    double m_speed = 0;
+    double m_distance = 0;
+    QUdpSocket *m_socket = nullptr;
     QTimer *m_timer = nullptr;
-    quint8 m_trackNumber;
+    quint8 m_trackNumber = 0;
     Ui::MainWindow *ui;
     double calcDistance(double fX, double fY, double fZ, double sX, double sY,
                         double sZ);
