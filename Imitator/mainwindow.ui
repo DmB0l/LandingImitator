@@ -163,10 +163,24 @@ QProgressBar::chunk {
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QDoubleSpinBox" name="DSB_speed"/>
+        <widget class="QDoubleSpinBox" name="DSB_speed">
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>1000.990000000000009</double>
+         </property>
+        </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QDoubleSpinBox" name="DSB_period"/>
+        <widget class="QDoubleSpinBox" name="DSB_period">
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="0" column="3">
         <widget class="QLabel" name="L_z">
@@ -182,13 +196,37 @@ QProgressBar::chunk {
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QDoubleSpinBox" name="DSB_secondZ"/>
+        <widget class="QDoubleSpinBox" name="DSB_secondZ">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QDoubleSpinBox" name="DSB_secondX"/>
+        <widget class="QDoubleSpinBox" name="DSB_secondX">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>100000.990000000005239</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QDoubleSpinBox" name="DSB_firstY"/>
+        <widget class="QDoubleSpinBox" name="DSB_firstY">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
         <spacer name="verticalSpacer_3">
@@ -204,7 +242,14 @@ QProgressBar::chunk {
         </spacer>
        </item>
        <item row="1" column="1">
-        <widget class="QDoubleSpinBox" name="DSB_firstX"/>
+        <widget class="QDoubleSpinBox" name="DSB_firstX">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>100000.990000000005239</double>
+         </property>
+        </widget>
        </item>
        <item row="8" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout">
@@ -244,7 +289,14 @@ QProgressBar::chunk {
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QDoubleSpinBox" name="DSB_firstZ"/>
+        <widget class="QDoubleSpinBox" name="DSB_firstZ">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="0" column="1">
         <widget class="QLabel" name="L_x">
@@ -292,7 +344,14 @@ QProgressBar::chunk {
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QDoubleSpinBox" name="DSB_secondY"/>
+        <widget class="QDoubleSpinBox" name="DSB_secondY">
+         <property name="minimum">
+          <double>-100000.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
        </item>
        <item row="5" column="1">
         <spacer name="verticalSpacer_4">

@@ -24,7 +24,10 @@ void MainWindow::goStart() {
         m_timer->stop();
     }
 
+    m_timeTraveled = 0;
     m_distanceTraveled = 0;
+    m_persentageTraveled = 0;
+
     m_trackNumber++;
 
     ui->L_trackNumberCounter->setText(QString::number(m_trackNumber));

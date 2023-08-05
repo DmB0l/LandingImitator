@@ -7,17 +7,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_socket->bind(QHostAddress::LocalHost, 5678);
     connect(m_socket, &QUdpSocket::readyRead, this, &MainWindow::onReadyRead);
 
-    m_graphScene = new GraphScene(this);
+    m_graphScene = new GridScene(this);
 
     message mess;
     mess.x = 2;
     mess.y = 2;
 
-    m_graphScene->addItem(new GraphItemNet());
-
-    m_graphView = ui->GV_1;
-    m_graphView->setScene(m_graphScene);
-    m_graphView->show();
+    ui->GV_1->setScene(m_graphScene);
+    ui->GV_1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->GV_1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -35,6 +33,6 @@ void MainWindow::onReadyRead() {
     qDebug() << mess.x << mess.y << mess.z << mess.trackNumber;
 
     QPen pen(Qt::red, 0.5, Qt::SolidLine, Qt::RoundCap);
-    m_graphScene->addLine(mess.x - 0.5, mess.y - 0.5, mess.x + 0.5, mess.y + 0.5, pen);
-    m_graphScene->addLine(mess.x - 0.5, mess.y + 0.5, mess.x + 0.5, mess.y - 0.5, pen);
+    m_graphScene->addLine(mess.x - 0.7, mess.y - 0.7, mess.x + 0.7, mess.y + 0.7, pen);
+    m_graphScene->addLine(mess.x - 0.7, mess.y + 0.7, mess.x + 0.7, mess.y - 0.7, pen);
 }

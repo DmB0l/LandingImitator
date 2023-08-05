@@ -16,10 +16,10 @@ class GraphView : public QGraphicsView {
     explicit GraphView(QWidget *parent = nullptr);
 
   protected:
-    void wheelEvent(QWheelEvent *event) override;
+    //    void wheelEvent(QWheelEvent *event) override;
 
   private:
-    void zoom(qreal factor);
+    //    void zoom(qreal factor);
     QPointF m_lastPos;
 };
 

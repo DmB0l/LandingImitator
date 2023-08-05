@@ -1,38 +1,36 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "graphitemNet.h"
+#include "../ProtocolPriFolder/protocol.h"
+#include "GridScene.h"
+#include "graphitemGrid.h"
 #include "graphscene.h"
 #include "graphview.h"
-#include "graphitemNet.h"
-#include "../ProtocolPriFolder/protocol.h"
 
+#include <QByteArray>
 #include <QMainWindow>
 #include <QUdpSocket>
-#include <QByteArray>
 
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
+namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
+  public slots:
     void onReadyRead();
 
-private:
-//    GraphItem *graphItem;
+  private:
+    //    GraphItem *graphItem;
     QUdpSocket *m_socket;
-    GraphScene *m_graphScene;
+    GridScene *m_graphScene;
     GraphView *m_graphView;
     Ui::MainWindow *ui;
 };

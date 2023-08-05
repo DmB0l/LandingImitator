@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1177</width>
+    <width>1200</width>
     <height>600</height>
    </rect>
   </property>
@@ -18,10 +18,36 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="GraphView" name="GV_1"/>
+       <widget class="QGraphicsView" name="GV_1">
+        <property name="minimumSize">
+         <size>
+          <width>600</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>600</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QGraphicsView" name="GV_2"/>
+       <widget class="QGraphicsView" name="GV_2">
+        <property name="minimumSize">
+         <size>
+          <width>600</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>600</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -32,20 +58,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1177</width>
+     <width>1200</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>GraphView</class>
-   <extends>QGraphicsView</extends>
-   <header>graphview.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

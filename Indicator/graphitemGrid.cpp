@@ -1,10 +1,10 @@
-#include "graphitemNet.h"
+#include "graphitemGrid.h"
 
-GraphItemNet::GraphItemNet() {}
+GraphItemGrid::GraphItemGrid() {}
 
-QRectF GraphItemNet::boundingRect() const { return QRectF(0, 0, 0, 0); }
+QRectF GraphItemGrid::boundingRect() const { return QRectF(0, 0, 0, 0); }
 
-void GraphItemNet::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
+void GraphItemGrid::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
                          QWidget *) {
     painter->setPen(QPen(Qt::black, 0.5, Qt::SolidLine, Qt::RoundCap));
 
