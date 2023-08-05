@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "../ProtocolPriFolder/protocol.h"
 #include <QMainWindow>
 #include <QUdpSocket>
 
@@ -22,15 +23,29 @@ class MainWindow : public QMainWindow {
     void calcTravel();
 
   private:
+    double m_startX = 0;
+    double m_startY = 0;
+    double m_startZ = 0;
+
+    double m_finishX = 0;
+    double m_finishY = 0;
+    double m_finishZ = 0;
+
+    double m_persentageTraveled = 0;
     double m_distanceTraveled = 0;
+    double m_timeTraveled = 0;
+
     double m_period = 0;
     double m_speed = 0;
     double m_distance = 0;
+    quint8 m_trackNumber = 0;
+
+    double m_timeToTravel = 0;
+
     QUdpSocket *m_socket = nullptr;
     QTimer *m_timer = nullptr;
-    quint8 m_trackNumber = 0;
     Ui::MainWindow *ui;
-    double calcDistance(double fX, double fY, double fZ, double sX, double sY,
-                        double sZ);
+
+    double calcDistance(double fX, double fY, double fZ, double sX, double sY, double sZ);
 };
 #endif // MAINWINDOW_H

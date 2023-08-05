@@ -1,15 +1,8 @@
 #include "graphitemNet.h"
 
-GraphItemNet::GraphItemNet() {
-    //    this->m_rect.setRect(-5, -6, 10, 12);
-}
+GraphItemNet::GraphItemNet() {}
 
-void GraphItemNet::setRect(double left, double top, double width,
-                           double height) {
-    this->m_rect.setRect(left, top, width, height);
-}
-
-QRectF GraphItemNet::boundingRect() const { return m_rect; }
+QRectF GraphItemNet::boundingRect() const { return QRectF(0, 0, 0, 0); }
 
 void GraphItemNet::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
                          QWidget *) {

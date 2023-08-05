@@ -14,15 +14,10 @@ class GraphItemNet : public QGraphicsItem {
 
     GraphItemNet();
 
-    void setRect(double left, double top, double width, double height);
-
     QRectF boundingRect() const override;
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *,
                QWidget *) override;
-
-  private:
-    QRect m_rect;
 };
 
 #endif // GRAPHITEM_H

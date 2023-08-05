@@ -3,8 +3,7 @@
 
 #include <QtCore>
 
-struct message
-{
+struct message {
     quint64 x = 0;
     quint64 y = 0;
     quint64 z = 0;
@@ -13,5 +12,9 @@ struct message
 };
 
 void printMessage(QString message);
+
+// QDataStream &operator<<(QDataStream &in, message const &mess);
+
+// QDataStream &operator>>(QDataStream &out, message &mess);
 
 #endif // PROTOCOL_H
