@@ -3,9 +3,6 @@
 
 #include "../ProtocolPriFolder/protocol.h"
 #include "GridScene.h"
-#include "graphitemGrid.h"
-#include "graphscene.h"
-#include "graphview.h"
 
 #include <QByteArray>
 #include <QMainWindow>
@@ -29,9 +26,9 @@ class MainWindow : public QMainWindow {
 
   private:
     //    GraphItem *graphItem;
+    //    bool eventFilter(QObject *obj, QEvent *event) override;
     QUdpSocket *m_socket;
     GridScene *m_graphScene;
-    GraphView *m_graphView;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

@@ -11,20 +11,18 @@ CONFIG += c++11
 SOURCES += \
     GridItem.cpp \
     GridScene.cpp \
-    graphitemGrid.cpp \
-    graphscene.cpp \
-    main.cpp \
-    mainwindow.cpp
+    Main.cpp \
+    MainWindow.cpp \
+    View.cpp
 
 HEADERS += \
     GridItem.h \
     GridScene.h \
-    graphitemGrid.h \
-    graphscene.h \
-    mainwindow.h
+    MainWindow.h \
+    View.h
 
 FORMS += \
-    mainwindow.ui
+    MainWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

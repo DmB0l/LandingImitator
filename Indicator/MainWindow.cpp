@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_socket->bind(QHostAddress::LocalHost, 5678);
     connect(m_socket, &QUdpSocket::readyRead, this, &MainWindow::onReadyRead);
 
-    m_graphScene = new GridScene(this);
+    m_graphScene = new GridScene(ui->GV_1);
 
     message mess;
     mess.x = 2;

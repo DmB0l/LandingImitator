@@ -1,9 +1,21 @@
 #include "GridScene.h"
 
-GridScene::GridScene(QObject *parent) : QGraphicsScene(parent) { createGrid(); }
+GridScene::GridScene(QObject *parent) : QGraphicsScene(parent) {
+    view = (QGraphicsView *)parent;
+    // Получение текущей позиции просмотра
+    QPointF currentViewPos = view->mapToScene(view->viewport()->rect().center());
+
+    // Смещение позиции просмотра
+    currentViewPos.setX(currentViewPos.x() - 50);
+
+    // Установка новой позиции просмотра
+    view->centerOn(currentViewPos);
+    createGrid();
+}
 
 void GridScene::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Left) {
+        qDebug() << "Прокрутка";
         move(-10, 0);
     } else if (event->key() == Qt::Key_Right) {
         move(10, 0);
@@ -18,12 +30,24 @@ void GridScene::wheelEvent(QGraphicsSceneWheelEvent *event) {
     // Масштабирование сцены при прокрутке колесика мыши
     int delta = event->delta();
     double scaleFactor = 1.15;
-    this->views().first()->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
+
+    //    QGraphicsView *view = this->views().first();
+
+    double currentScale = view->transform().m11();
+
     if (delta > 0) {
-        this->views().first()->scale(scaleFactor, scaleFactor);
+        if (currentScale >= 1.0) // Ограничение масштаба сверху
+            return;
+
+        view->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
+        view->scale(scaleFactor, scaleFactor);
 
     } else if (delta < 0) {
-        this->views().first()->scale(1 / scaleFactor, 1 / scaleFactor);
+        if (currentScale <= 0.3) // Ограничение масштаба снизу
+            return;
+
+        view->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
+        view->scale(1 / scaleFactor, 1 / scaleFactor);
     }
 }
 
@@ -61,18 +85,25 @@ void GridScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 }
 
 void GridScene::createGrid() {
-    const int rows = 10;     // Количество строк сетки
-    const int cols = 10;     // Количество столбцов сетки
-    const int gridSize = 50; // Размер ячейки сетки
+    const int rows = 20;             // Количество строк сетки
+    const int cols = 20;             // Количество столбцов сетки
+    const int gridSize = 50;         // Размер ячейки сетки
+    const int delta = gridSize / 25; // Размер ячейки сетки
 
     // Создание ячеек сетки и добавление их на сцену
     for (int row = -rows; row <= rows; ++row) {
-        for (int col = -cols; col <= cols; ++col) {
+        for (int col = -cols; col <= cols + 1; ++col) {
             GridItem *gridItem = new GridItem(gridSize, row, col);
             addItem(gridItem);
             gridItem->setPos(col * gridSize, row * gridSize);
         }
     }
+
+    QPen pen(QBrush(Qt::GlobalColor::black), 4.0, Qt::PenStyle::SolidLine);
+    addLine(0, -gridSize * (rows + 1), 0, gridSize * (rows + 1), pen);
+    addLine(-gridSize * (cols + 1), 0, gridSize * (rows + 1), 0, pen);
+
+    //    QGraphicsView *view = this->views().first();
 }
 
 void GridScene::move(int dx, int dy) {

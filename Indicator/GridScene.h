@@ -1,6 +1,7 @@
 #ifndef GRIDSCENE_H
 #define GRIDSCENE_H
 
+#include <QDebug>
 #include <QGraphicsScene>
 #include <QGraphicsSceneWheelEvent>
 #include <QGraphicsView>
@@ -21,8 +22,10 @@ class GridScene : public QGraphicsScene {
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
 
   private:
-    bool isMousePressed;
+    bool isMousePressed = false;
     QPointF lastMousePos;
+
+    QGraphicsView *view = nullptr;
 
     void createGrid();
     void move(int dx, int dy);
