@@ -85,22 +85,22 @@ void GridScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 }
 
 void GridScene::createGrid() {
-    const int rows = 20;             // Количество строк сетки
-    const int cols = 20;             // Количество столбцов сетки
-    const int gridSize = 50;         // Размер ячейки сетки
-    const int delta = gridSize / 25; // Размер ячейки сетки
+    const int rows = 20;            // Количество строк сетки
+    const int cols = 20;            // Количество столбцов сетки
+    const int gridSize = 50;        // Размер ячейки сетки
+    const int delta = gridSize / 2; // Размер ячейки сетки
 
     // Создание ячеек сетки и добавление их на сцену
     for (int row = -rows; row <= rows; ++row) {
         for (int col = -cols; col <= cols + 1; ++col) {
             GridItem *gridItem = new GridItem(gridSize, row, col);
             addItem(gridItem);
-            gridItem->setPos(col * gridSize, row * gridSize);
+            gridItem->setPos(col * gridSize + delta, row * gridSize);
         }
     }
 
     QPen pen(QBrush(Qt::GlobalColor::black), 4.0, Qt::PenStyle::SolidLine);
-    addLine(0, -gridSize * (rows + 1), 0, gridSize * (rows + 1), pen);
+    addLine(delta, -gridSize * (rows + 1), delta, gridSize * (rows + 1), pen);
     addLine(-gridSize * (cols + 1), 0, gridSize * (rows + 1), 0, pen);
 
     //    QGraphicsView *view = this->views().first();
