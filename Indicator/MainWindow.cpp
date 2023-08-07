@@ -32,7 +32,8 @@ void MainWindow::onReadyRead() {
     stream >> mess.x >> mess.y >> mess.z >> mess.trackNumber;
     qDebug() << mess.x << mess.y << mess.z << mess.trackNumber;
 
-    QPen pen(Qt::red, 0.5, Qt::SolidLine, Qt::RoundCap);
-    m_graphScene->addLine(mess.x - 0.7, mess.y - 0.7, mess.x + 0.7, mess.y + 0.7, pen);
-    m_graphScene->addLine(mess.x - 0.7, mess.y + 0.7, mess.x + 0.7, mess.y - 0.7, pen);
+    QPen pen(Qt::red, 10, Qt::SolidLine, Qt::RoundCap);
+    m_graphScene->addLine(m_graphScene->coordZeroX() + mess.x - 0.7, m_graphScene->coordZeroY() + mess.y - 0.7,
+                          m_graphScene->coordZeroX() + mess.x + 0.7, m_graphScene->coordZeroY() + mess.y + 0.7, pen);
+    //    m_graphScene->addLine(mess.x - 0.7, mess.y + 0.7, mess.x + 0.7, mess.y - 0.7, pen);
 }
