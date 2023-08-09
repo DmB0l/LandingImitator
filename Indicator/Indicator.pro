@@ -13,13 +13,17 @@ SOURCES += \
     GridScene.cpp \
     Main.cpp \
     MainWindow.cpp \
-    View.cpp
+    View.cpp \
+    MyScene.cpp \
+    MyView.cpp
 
 HEADERS += \
     GridItem.h \
     GridScene.h \
     MainWindow.h \
-    View.h
+    View.h \
+    MyScene.h \
+    MyView.h
 
 FORMS += \
     MainWindow.ui
