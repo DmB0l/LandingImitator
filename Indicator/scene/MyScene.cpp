@@ -45,10 +45,10 @@ void MyScene::drawRedEllipse(qreal x, qreal y, qreal w, qreal h) {
 //    ellipse->setPen(pen2);
 //    this->addItem(ellipse);
     ItemEllipse *ellipse = new ItemEllipse(x, y, w, h, this);
-//    this->m_ellipseVec.push_back(ellipse);
+    this->m_ellipseVec.push_back(ellipse);
 
     ItemText *textItem = new ItemText(x+5, y, 50, 10);
-//    this->m_textVec.push_back(textItem);
+    this->m_textVec.push_back(textItem);
 
     this->addItem(ellipse);
     this->addItem(textItem);
