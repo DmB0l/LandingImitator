@@ -10,8 +10,7 @@
 #include <QPen>
 #include <QUdpSocket>
 
-//#include "../ProtocolPriFolder/protocol.h"
-
+#include "../ProtocolPriFolder/protocol.h"
 #include "MyScene.h"
 #include "MyView.h"
 
@@ -35,7 +34,7 @@ class MainWindow : public QMainWindow {
     Ui::MainWindow *ui;
 
     MyView *m_view = nullptr;
-    QGraphicsScene *m_scene = nullptr;
+    MyScene *m_scene = nullptr;
     QGraphicsItem *m_item = nullptr;
 
     QUdpSocket *m_socket = nullptr;

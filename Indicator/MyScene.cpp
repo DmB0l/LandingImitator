@@ -16,3 +16,11 @@ void MyScene::createGrid() {
         this->addLine(-sizeSquare, i, sizeSquare, i, pen);
     }
 }
+
+void MyScene::drawRedEllipse(qreal x, qreal y, qreal w, qreal h) {
+    QPen pen2(QBrush(Qt::GlobalColor::red), 1.0, Qt::PenStyle::SolidLine);
+    QGraphicsEllipseItem *ellipse = new QGraphicsEllipseItem(x, y, w, h);
+    ellipse->setBrush(QBrush(Qt::red));
+    ellipse->setPen(pen2);
+    this->addItem(ellipse);
+}

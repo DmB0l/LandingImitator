@@ -9,8 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    GridItem.cpp \
-    GridScene.cpp \
     Main.cpp \
     MainWindow.cpp \
     View.cpp \
@@ -18,8 +16,6 @@ SOURCES += \
     MyView.cpp
 
 HEADERS += \
-    GridItem.h \
-    GridScene.h \
     MainWindow.h \
     View.h \
     MyScene.h \

@@ -17,10 +17,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_view->setMaximumHeight(size);
     m_view->setMinimumWidth(size);
     m_view->setMinimumHeight(size);
-    m_view->centerOn(m_view->sceneRect().center());
-    m_view->setGeometry(QApplication::desktop()->screenGeometry().center().x() - m_view->width() / 2,
-                        QApplication::desktop()->screenGeometry().center().y() - m_view->height() / 2, m_view->width(),
-                        m_view->height());
 
     //    m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //    m_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -28,26 +24,26 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_scene = new MyScene(m_view);
 
     m_view->setScene(m_scene);
-
-    //    QPen pen(Qt::green, 3, Qt::DashDotLine, Qt::RoundCap, Qt::RoundJoin);
-    //    QLine line(-5000,0, 5000, 0);
-
-    //    m_scene->addLine(line);
     m_view->show();
 }
 
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::onReadyRead() {
-    //    QByteArray buffer;
-    //    buffer.resize(m_socket->pendingDatagramSize());
+    QByteArray buffer;
+    buffer.resize(m_socket->pendingDatagramSize());
 
-    //    m_socket->readDatagram(buffer.data(), buffer.size());
+    m_socket->readDatagram(buffer.data(), buffer.size());
 
-    //    QDataStream stream(&buffer, QIODevice::ReadOnly);
-    //    message mess;
-    //    stream >> mess.x >> mess.y >> mess.z >> mess.trackNumber;
-    //    qDebug() << mess.x << mess.y << mess.z << mess.trackNumber;
+    QDataStream stream(&buffer, QIODevice::ReadOnly);
+    message mess;
+    stream >> mess.x >> mess.y >> mess.z >> mess.trackNumber;
+    qDebug() << mess.x << mess.y << mess.z << mess.trackNumber;
 
-    //    QPen pen(QBrush(Qt::GlobalColor::red), 3.0, Qt::PenStyle::SolidLine);
+    int x = mess.x;
+    int y = mess.y;
+
+    qDebug() << x << y;
+
+    m_scene->drawRedEllipse(x - 2, y - 2, 4, 4);
 }

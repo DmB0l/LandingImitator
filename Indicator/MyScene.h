@@ -1,6 +1,7 @@
 #ifndef MYSCENE_H
 #define MYSCENE_H
 
+#include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
 
 class MyScene : public QGraphicsScene {
@@ -12,6 +13,7 @@ class MyScene : public QGraphicsScene {
     MyScene(QObject *parent = nullptr);
 
     void createGrid();
+    void drawRedEllipse(qreal x, qreal y, qreal w, qreal h);
 };
 
 #endif  // MYSCENE_H
