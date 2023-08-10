@@ -3,13 +3,15 @@
 
 #include <QGraphicsView>
 #include <QWheelEvent>
+#include <QScrollBar>
 
 class MyView : public QGraphicsView {
    public:
-    MyView(QWidget *parent);
+    explicit MyView(QWidget *parent);
 
    protected:
     void wheelEvent(QWheelEvent *event) override;
+
 };
 
 #endif  // MYVIEW_H

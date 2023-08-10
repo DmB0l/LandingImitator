@@ -9,10 +9,11 @@
 #include <QMainWindow>
 #include <QPen>
 #include <QUdpSocket>
+#include <QScrollBar>
 
-#include "../ProtocolPriFolder/protocol.h"
-#include "MyScene.h"
-#include "MyView.h"
+#include "../../ProtocolPriFolder/protocol.h"
+#include "scene/MyScene.h"
+#include "view/MyView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

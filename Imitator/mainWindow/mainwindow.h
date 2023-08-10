@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "../ProtocolPriFolder/protocol.h"
+#include "../../ProtocolPriFolder/protocol.h"
 #include <QMainWindow>
 #include <QUdpSocket>
 

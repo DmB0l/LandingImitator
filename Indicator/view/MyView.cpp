@@ -1,7 +1,7 @@
 #include "MyView.h"
 
 MyView::MyView(QWidget *parent) : QGraphicsView(parent) {
-    setTransformationAnchor(QGraphicsView::NoAnchor);
+    setTransformationAnchor(QGraphicsView::AnchorViewCenter);
     setDragMode(QGraphicsView::ScrollHandDrag);
 }
 
@@ -10,12 +10,12 @@ void MyView::wheelEvent(QWheelEvent *event) {
     int delta = event->delta();
     double scaleFactor = 1.15;
 
-    //    QGraphicsView *view = this->views().first();
+    QPointF pos = mapToScene(event->pos());
 
     double currentScale = this->transform().m11();
 
     if (delta > 0) {
-        if (currentScale >= 2.0)  // Ограничение масштаба сверху
+        if (currentScale >= 2.5)  // Ограничение масштаба сверху
             return;
 
         this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
@@ -28,4 +28,7 @@ void MyView::wheelEvent(QWheelEvent *event) {
         this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
         this->scale(1 / scaleFactor, 1 / scaleFactor);
     }
+
+    centerOn(pos);
+    event->accept();
 }

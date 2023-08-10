@@ -4,11 +4,13 @@
 #include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
 
+
 class MyScene : public QGraphicsScene {
    public:
     static const int ROW_COUNT = 50;
     static const int COLUMN_COUNT = 50;
     static const int FIELD_SIZE = 10;
+    static const int SIZE_SQUARE = ROW_COUNT * FIELD_SIZE;;
 
     MyScene(QObject *parent = nullptr);
 

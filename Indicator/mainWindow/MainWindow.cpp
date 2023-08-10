@@ -45,5 +45,5 @@ void MainWindow::onReadyRead() {
 
     qDebug() << x << y;
 
-    m_scene->drawRedEllipse(x - 2, y - 2, 4, 4);
+    m_scene->drawRedEllipse(MyScene::SIZE_SQUARE + x - 2, MyScene::SIZE_SQUARE + y - 2, 4, 4);
 }
