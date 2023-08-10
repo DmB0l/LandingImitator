@@ -28,7 +28,9 @@ add_executable(Indicator
         View.cpp
         View.h
         itemEllipse/ItemEllipse.cpp
-        itemEllipse/ItemEllipse.h)
+        itemEllipse/ItemEllipse.h
+        itemText/ItemText.cpp
+        itemText/ItemText.h)
 
 target_link_libraries(Indicator
         Qt5::Core
