@@ -21,35 +21,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d23b64b-16f9-4181-946d-68a255b7e336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/airplane/Airplane.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/airplane/Airplane.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Indicator/src/AirplaneItemListView.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Indicator/src/AirplaneItemListView.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainWindow/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainWindow/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainWindow/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/mainwindow.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/View.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/View.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/itemEllipse/ItemEllipse.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/itemEllipse/ItemEllipse.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/itemText/ItemText.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/itemText/ItemText.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/main/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/main/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/mainWindow/MainWindow.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/scene/MyScene.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/scene/MyScene.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/view/MyView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/view/MyView.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/view/MyView.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/view/MyView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

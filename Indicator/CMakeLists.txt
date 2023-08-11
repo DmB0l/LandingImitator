@@ -31,7 +31,8 @@ add_executable(Indicator
         src/itemText/ItemText.cpp
         src/itemText/ItemText.h
         src/airplane/Airplane.cpp
-        src/airplane/Airplane.h)
+        src/airplane/Airplane.h
+)
 
 target_link_libraries(Indicator
         Qt5::Core
