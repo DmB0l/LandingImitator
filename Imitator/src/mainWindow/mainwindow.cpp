@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     connect(ui->PB_start, &QPushButton::clicked, this, &MainWindow::goStart);
+    connect(ui->PB_deleteTrackNumber, &QPushButton::clicked, this, &MainWindow::onDeleteTrackNumber);
+    connect(ui->PB_deleteAll, &QPushButton::clicked, this, &MainWindow::onDeleteAll);
 
     ui->progB->setValue(0);
 
@@ -24,6 +26,9 @@ void MainWindow::goStart() {
         m_timer->stop();
     }
 
+    ui->PB_deleteAll->setEnabled(false);
+    ui->PB_deleteTrackNumber->setEnabled(false);
+    ui->progB->setValue(0);
     m_timeTraveled = 0;
     m_distanceTraveled = 0;
     m_persentageTraveled = 0;
@@ -91,9 +96,36 @@ void MainWindow::calcTravel() {
 
     if (m_distanceTraveled >= m_distance) {
         m_timer->stop();
+        ui->PB_deleteAll->setEnabled(true);
+        ui->PB_deleteTrackNumber->setEnabled(true);
     }
 }
 
 double MainWindow::calcDistance(double fX, double fY, double fZ, double sX, double sY, double sZ) {
     return sqrt(pow(sX - fX, 2) + pow(sY - fY, 2) + pow(sZ - fZ, 2));
+}
+
+void MainWindow::onDeleteAll() {
+    ui->DSB_firstX->setValue(0.0);
+    ui->DSB_firstY->setValue(0.0);
+    ui->DSB_firstZ->setValue(0.0);
+
+    ui->DSB_secondX->setValue(0.0);
+    ui->DSB_secondY->setValue(0.0);
+    ui->DSB_secondZ->setValue(0.0);
+
+    ui->DSB_speed->setValue(1.0);
+    ui->DSB_period->setValue(1.0);
+
+    ui->progB->setValue(0);
+
+    ui->L_trackNumberCounter->setText("0");
+    m_trackNumber = 0;
+}
+
+void MainWindow::onDeleteTrackNumber() {
+    ui->progB->setValue(0);
+
+    ui->L_trackNumberCounter->setText("0");
+    m_trackNumber = 0;
 }

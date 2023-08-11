@@ -21,6 +21,8 @@ void MyView::wheelEvent(QWheelEvent *event) {
         this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
         this->scale(scaleFactor, scaleFactor);
 
+//        centerOn(pos);
+
     } else if (delta < 0) {
         if (currentScale <= 0.5)  // Ограничение масштаба снизу
             return;
@@ -29,7 +31,7 @@ void MyView::wheelEvent(QWheelEvent *event) {
         this->scale(1 / scaleFactor, 1 / scaleFactor);
     }
 
-    centerOn(pos);
+
     event->accept();
 }
 

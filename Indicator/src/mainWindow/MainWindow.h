@@ -11,9 +11,9 @@
 #include <QUdpSocket>
 #include <QScrollBar>
 
-#include "../../ProtocolPriFolder/protocol.h"
-#include "scene/MyScene.h"
-#include "view/MyView.h"
+#include "../../../ProtocolPriFolder/protocol.h"
+#include "src/scene/MyScene.h"
+#include "src/view/MyView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,9 +34,11 @@ class MainWindow : public QMainWindow {
    private:
     Ui::MainWindow *ui;
 
-    MyView *m_view = nullptr;
-    MyScene *m_scene = nullptr;
-    QGraphicsItem *m_item = nullptr;
+    MyView *m_view1 = nullptr;
+    MyScene *m_scene1 = nullptr;
+
+    MyView *m_view2 = nullptr;
+    MyScene *m_scene2 = nullptr;
 
     QUdpSocket *m_socket = nullptr;
 };

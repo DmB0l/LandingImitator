@@ -10,21 +10,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     connect(m_socket, &QUdpSocket::readyRead, this, &MainWindow::onReadyRead);
 
-    int size = 500;
+    m_view1 = ui->GV_1;
+    m_view2 = ui->GV_2;
 
-    m_view = new MyView(this);
-    m_view->setMaximumWidth(size);
-    m_view->setMaximumHeight(size);
-    m_view->setMinimumWidth(size);
-    m_view->setMinimumHeight(size);
+    m_view1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_view1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_view2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_view2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    //    m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //    m_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_scene1 = new MyScene(m_view1, ui->LV_1);
+    m_scene2 = new MyScene(m_view2, ui->LV_2);
 
-    m_scene = new MyScene(m_view);
-
-    m_view->setScene(m_scene);
-    m_view->show();
+    m_view1->setScene(m_scene1);
+    m_view2->setScene(m_scene2);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -45,5 +43,5 @@ void MainWindow::onReadyRead() {
 
     qDebug() << x << y;
 
-    m_scene->drawRedEllipse(MyScene::SIZE_SQUARE + x - 2, MyScene::SIZE_SQUARE + y - 2, 4, 4);
+    m_scene1->drawTrack(MyScene::SIZE_SQUARE + x - 2, MyScene::SIZE_SQUARE + y - 2, 4, 4, mess.trackNumber);
 }

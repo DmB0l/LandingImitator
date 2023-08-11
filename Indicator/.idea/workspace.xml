@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -21,7 +21,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8ca94c4-3727-4749-9ee6-45097f6ebc6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/scene/MyScene.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/airplane/Airplane.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/airplane/Airplane.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/itemEllipse/ItemEllipse.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/itemText/ItemText.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scene/MyScene.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scene/MyScene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/main/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/mainWindow/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/mainWindow/mainwindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/mainWindow/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/mainWindow/mainwindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/mainWindow/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/mainWindow/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/itemEllipse/ItemEllipse.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/itemEllipse/ItemEllipse.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/itemEllipse/ItemEllipse.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/itemText/ItemText.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/itemText/ItemText.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/itemText/ItemText.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainWindow/MainWindow.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene/MyScene.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene/MyScene.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MyView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MyView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MyView.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MyView.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,48 +68,48 @@
     <option name="majorVersion" value="2023" />
     <option name="minorVersion" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2Tmof2LVC13rRMBYjFqn6JGMD52" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "development",
-    "last_opened_file_path": "/home/alex/ProjectsDmB/LandingImitator/Indicator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/alex/ProjectsDmB/LandingImitator/Imitator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/Airplane" />
       <recent name="$PROJECT_DIR$/itemText" />
       <recent name="$PROJECT_DIR$/scene" />
       <recent name="$PROJECT_DIR$/view" />
-      <recent name="$PROJECT_DIR$/MainWindow" />
-      <recent name="$PROJECT_DIR$/main" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Indicator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Indicator" TARGET_NAME="Indicator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Indicator" RUN_TARGET_NAME="Indicator">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Indicator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Indicator" TARGET_NAME="Indicator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Indicator" RUN_TARGET_NAME="Indicator">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -96,6 +124,9 @@
       <option name="presentableId" value="Default" />
       <updated>1691657716775</updated>
       <workItem from="1691657717803" duration="17467000" />
+      <workItem from="1691675936285" duration="58000" />
+      <workItem from="1691734459343" duration="15518000" />
+      <workItem from="1691756189892" duration="3436000" />
     </task>
     <servers />
   </component>
@@ -107,5 +138,16 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/itemEllipse/ItemEllipse.cpp</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

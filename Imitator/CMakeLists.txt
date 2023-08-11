@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 include_directories(.)
 
@@ -17,10 +18,10 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 add_executable(Imitator
-        main/main.cpp
-        mainWindow/mainwindow.cpp
-        mainWindow/mainwindow.h
-        mainWindow/mainwindow.ui)
+        src/main/main.cpp
+        src/mainWindow/mainwindow.cpp
+        src/mainWindow/mainwindow.h
+        src/mainWindow/mainwindow.ui)
 
 target_link_libraries(Imitator
         Qt5::Core

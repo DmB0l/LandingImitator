@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 include_directories(.)
 
@@ -17,20 +18,20 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 add_executable(Indicator
-        main/Main.cpp
-        mainWindow/MainWindow.cpp
-        mainWindow/MainWindow.h
-        mainWindow/MainWindow.ui
-        scene/MyScene.cpp
-        scene/MyScene.h
-        view/MyView.cpp
-        view/MyView.h
-        View.cpp
-        View.h
-        itemEllipse/ItemEllipse.cpp
-        itemEllipse/ItemEllipse.h
-        itemText/ItemText.cpp
-        itemText/ItemText.h)
+        src/main/Main.cpp
+        src/mainWindow/MainWindow.cpp
+        src/mainWindow/MainWindow.h
+        src/mainWindow/MainWindow.ui
+        src/scene/MyScene.cpp
+        src/scene/MyScene.h
+        src/view/MyView.cpp
+        src/view/MyView.h
+        src/itemEllipse/ItemEllipse.cpp
+        src/itemEllipse/ItemEllipse.h
+        src/itemText/ItemText.cpp
+        src/itemText/ItemText.h
+        src/airplane/Airplane.cpp
+        src/airplane/Airplane.h)
 
 target_link_libraries(Indicator
         Qt5::Core

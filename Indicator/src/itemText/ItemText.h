@@ -5,20 +5,20 @@
 #ifndef INDICATOR_ITEMTEXT_H
 #define INDICATOR_ITEMTEXT_H
 
-
 #include <QGraphicsTextItem>
 #include <QPainter>
 
+
 class ItemText : public QGraphicsTextItem {
 public:
-    ItemText(qreal x, qreal y, qreal w, qreal h);
+    ItemText(qreal x, qreal y, qreal w, qreal h, int numberAirplane);
 
     QRectF boundingRect() const override;
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 private:
-//    QString m_text = "";
+    int m_numberAirplane = 0;
 
     qreal m_x = 0;
     qreal m_y = 0;
