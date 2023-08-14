@@ -8,6 +8,8 @@
 #include <QListView>
 #include <QStandardItem>
 #include <QGraphicsView>
+#include <QPushButton>
+
 
 #include "src/itemEllipse/ItemEllipse.h"
 #include "src/itemText/ItemText.h"

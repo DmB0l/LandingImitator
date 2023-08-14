@@ -32,6 +32,8 @@ add_executable(Indicator
         src/itemText/ItemText.h
         src/airplane/Airplane.cpp
         src/airplane/Airplane.h
+        src/AirplaneItemListView.cpp
+        src/AirplaneItemListView.h
 )
 
 target_link_libraries(Indicator

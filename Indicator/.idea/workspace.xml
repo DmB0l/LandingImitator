@@ -20,15 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8ca94c4-3727-4749-9ee6-45097f6ebc6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AirplaneItemListView.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AirplaneItemListView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/MyScene.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="e8ca94c4-3727-4749-9ee6-45097f6ebc6e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +96,7 @@
       <workItem from="1691657717803" duration="17467000" />
       <workItem from="1691675936285" duration="58000" />
       <workItem from="1691734459343" duration="15518000" />
-      <workItem from="1691756189892" duration="4700000" />
+      <workItem from="1691756189892" duration="4746000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,5 @@
 #include "MyScene.h"
+#include "src/AirplaneItemListView.h"
 
 MyScene::MyScene(QObject *parent, QListView *listView) : QGraphicsScene(parent), m_listView(listView),
                                                          m_parent(parent) {
@@ -58,9 +59,9 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
         m_numberItem = 0;
 
         // Создание элементов
-//        auto *item1 = new AirplaneItemListView("track number: " + QString::number(numberAirplane))
-        QStandardItem *item1 = new QStandardItem("track number: " + QString::number(numberAirplane));
-//        item1->setEditable(false);
+        auto *item1 = new AirplaneItemListView("track number: " + QString::number(numberAirplane));
+//        QStandardItem *item1 = new QStandardItem("track number: " + QString::number(numberAirplane));
+        item1->setEditable(false);
         QBrush brush(color); // создаем объект QBrush с цветом
         item1->setForeground(brush); // устанавливаем красный цвет для надписи элемента
 

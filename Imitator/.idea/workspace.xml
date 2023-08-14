@@ -21,13 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d23b64b-16f9-4181-946d-68a255b7e336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/AirplaneItemListView.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/AirplaneItemListView.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +79,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,6 +92,7 @@
       <workItem from="1691675972539" duration="26000" />
       <workItem from="1691734431451" duration="6896000" />
       <workItem from="1691756181664" duration="2106000" />
+      <workItem from="1692004770506" duration="1000" />
     </task>
     <servers />
   </component>

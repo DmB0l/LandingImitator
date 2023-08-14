@@ -21,7 +21,9 @@ add_executable(Imitator
         src/main/main.cpp
         src/mainWindow/mainwindow.cpp
         src/mainWindow/mainwindow.h
-        src/mainWindow/mainwindow.ui)
+        src/mainWindow/mainwindow.ui
+        src/TravelAirplane.cpp
+        src/TravelAirplane.h)
 
 target_link_libraries(Imitator
         Qt5::Core

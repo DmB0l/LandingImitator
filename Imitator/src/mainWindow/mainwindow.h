@@ -5,6 +5,9 @@
 #include <QMainWindow>
 #include <QUdpSocket>
 
+#include "../TravelAirplane.h"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -22,7 +25,8 @@ class MainWindow : public QMainWindow {
     void onDeleteTrackNumber();
     void onDeleteAll();
     void goStart();
-    void calcTravel();
+    void changeProgBar(double newVal);
+    void unlockButtons();
 
   private:
     double m_startX = 0;
@@ -33,16 +37,13 @@ class MainWindow : public QMainWindow {
     double m_finishY = 0;
     double m_finishZ = 0;
 
-    double m_persentageTraveled = 0;
-    double m_distanceTraveled = 0;
-    double m_timeTraveled = 0;
-
     double m_period = 0;
     double m_speed = 0;
     double m_distance = 0;
     quint8 m_trackNumber = 0;
 
     double m_timeToTravel = 0;
+
 
     QUdpSocket *m_socket = nullptr;
     QTimer *m_timer = nullptr;

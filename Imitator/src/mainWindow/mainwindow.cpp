@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "src/TravelAirplane.h"
 
 #include <QDebug>
 #include <QTime>
@@ -13,10 +14,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->PB_deleteTrackNumber, &QPushButton::clicked, this, &MainWindow::onDeleteTrackNumber);
     connect(ui->PB_deleteAll, &QPushButton::clicked, this, &MainWindow::onDeleteAll);
 
-    ui->progB->setValue(0);
 
-    m_socket = new QUdpSocket();
-    m_socket->bind(QHostAddress::LocalHost, 1234);
+    ui->progB->setValue(0);
+    ui->PB_stop->setEnabled(false);
+
+//    m_socket = new QUdpSocket();
+//    m_socket->bind(QHostAddress::LocalHost, 1234);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -26,12 +29,16 @@ void MainWindow::goStart() {
         m_timer->stop();
     }
 
+    ui->PB_stop->setEnabled(true);
     ui->PB_deleteAll->setEnabled(false);
     ui->PB_deleteTrackNumber->setEnabled(false);
+    ui->PB_start->setEnabled(false);
+
     ui->progB->setValue(0);
-    m_timeTraveled = 0;
-    m_distanceTraveled = 0;
-    m_persentageTraveled = 0;
+
+//    m_timeTraveled = 0;
+//    m_distanceTraveled = 0;
+//    m_persentageTraveled = 0;
 
     m_trackNumber++;
 
@@ -50,6 +57,7 @@ void MainWindow::goStart() {
 
     m_distance = calcDistance(m_startX, m_startY, m_startZ, m_finishX, m_finishY, m_finishZ);
 
+
     if (m_distance != 0) {
         ui->progB->setMaximum(m_distance);
     }
@@ -61,44 +69,28 @@ void MainWindow::goStart() {
     qDebug() << "distance: " << m_distance;
     qDebug() << "time to travel: " << m_distance << '\n';
 
-    m_timer = new QTimer(this);
+    TravelAirplane *travelAirplane = new TravelAirplane(m_startX, m_startY, m_startZ, m_finishX, m_finishY,
+                                                        m_finishZ, m_distance, m_timeToTravel, m_speed, m_period, m_trackNumber);
 
-    connect(m_timer, &QTimer::timeout, this, &MainWindow::calcTravel);
+    connect(ui->PB_stop, &QPushButton::clicked, travelAirplane, &TravelAirplane::stop);
 
-    if (m_distance != 0)
-        m_timer->start(m_period * 1000);
-}
+    QThread *thread = new QThread();
+    travelAirplane->moveToThread(thread);
 
-void MainWindow::calcTravel() {
-    m_timeTraveled += m_period;
-    m_distanceTraveled += m_speed * m_period;
-    m_persentageTraveled = m_timeTraveled / m_timeToTravel;
-    qDebug() << "distance traveled: " << m_distanceTraveled;
-    qDebug() << "percent traveled: " << m_persentageTraveled << '\n';
+    connect(thread, &QThread::started, travelAirplane, &TravelAirplane::initTimer);
 
-    ui->progB->setValue(m_distanceTraveled >= m_distance ? m_distance : m_distanceTraveled);
+    connect(travelAirplane, &TravelAirplane::changeProgBar, this, &MainWindow::changeProgBar);
 
-    message mess;
-    //    qDebug() << m_startX * (1 - m_persentageTraveled) + m_finishX * m_persentageTraveled;
-    mess.x = m_startX * (1 - m_persentageTraveled) + m_finishX * m_persentageTraveled;
-    mess.y = m_startY * (1 - m_persentageTraveled) + m_finishY * m_persentageTraveled;
-    mess.z = m_startZ * (1 - m_persentageTraveled) + m_finishZ * m_persentageTraveled;
-    mess.trackNumber = m_trackNumber;
+    // При излучении сигнала finished получаем флаг успешности
+    connect(travelAirplane, &TravelAirplane::finished, this, &MainWindow::unlockButtons);
+    // Также, по сигналу finished отправляем команду на завершение потока
+    connect(travelAirplane, &TravelAirplane::finished, thread, &QThread::quit);
+    // А потом удаляем экземпляр обработчика
+    connect(travelAirplane, &TravelAirplane::finished, travelAirplane, &QObject::deleteLater);
+    // И наконец, когда закончит работу поток, удаляем и его
+    connect(thread, &QThread::finished, thread, &QObject::deleteLater);
 
-    QByteArray arr;
-    QDataStream stream(&arr, QIODevice::WriteOnly);
-
-    //    stream << mess;
-
-    stream << mess.x << mess.y << mess.z << mess.trackNumber;
-
-    m_socket->writeDatagram(arr, QHostAddress::LocalHost, 5678);
-
-    if (m_distanceTraveled >= m_distance) {
-        m_timer->stop();
-        ui->PB_deleteAll->setEnabled(true);
-        ui->PB_deleteTrackNumber->setEnabled(true);
-    }
+    thread->start();
 }
 
 double MainWindow::calcDistance(double fX, double fY, double fZ, double sX, double sY, double sZ) {
@@ -128,4 +120,16 @@ void MainWindow::onDeleteTrackNumber() {
 
     ui->L_trackNumberCounter->setText("0");
     m_trackNumber = 0;
+}
+
+void MainWindow::unlockButtons() {
+//    m_timer->stop();
+    ui->PB_stop->setEnabled(false);
+    ui->PB_start->setEnabled(true);
+    ui->PB_deleteAll->setEnabled(true);
+    ui->PB_deleteTrackNumber->setEnabled(true);
+}
+
+void MainWindow::changeProgBar(double newVal) {
+    ui->progB->setValue(newVal);
 }
