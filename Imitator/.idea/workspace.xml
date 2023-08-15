@@ -23,6 +23,11 @@
     <list default="true" id="1d23b64b-16f9-4181-946d-68a255b7e336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

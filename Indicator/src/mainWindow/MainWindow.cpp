@@ -18,11 +18,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_view2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_view2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    m_scene1 = new MyScene(m_view1, ui->LV_1);
-    m_scene2 = new MyScene(m_view2, ui->LV_2);
+    m_scene1 = new MyScene(m_view1, ui->LW_1);
+    m_scene2 = new MyScene(m_view2, ui->LW_2);
 
     m_view1->setScene(m_scene1);
     m_view2->setScene(m_scene2);
+
+//    ui->LW_1->setItemWidget(new QListWidgetItem(ui->LW_1),
+//                                  new QLabel("Button " + QString::number(1), ui->LW_1));
 }
 
 MainWindow::~MainWindow() { delete ui; }

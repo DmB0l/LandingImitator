@@ -1,8 +1,9 @@
+#include <QLabel>
 #include "MyScene.h"
 #include "src/AirplaneItemListView.h"
 
-MyScene::MyScene(QObject *parent, QListView *listView) : QGraphicsScene(parent), m_listView(listView),
-                                                         m_parent(parent) {
+MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget),
+                                                             m_parent(parent) {
     createGrid();
     m_model = new QStandardItemModel(this);
 }
@@ -59,17 +60,24 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
         m_numberItem = 0;
 
         // Создание элементов
-        auto *item1 = new AirplaneItemListView("track number: " + QString::number(numberAirplane));
-//        QStandardItem *item1 = new QStandardItem("track number: " + QString::number(numberAirplane));
-        item1->setEditable(false);
-        QBrush brush(color); // создаем объект QBrush с цветом
-        item1->setForeground(brush); // устанавливаем красный цвет для надписи элемента
+//        auto *item1 = new AirplaneItemListView("track number: " + QString::number(numberAirplane));
+////        QStandardItem *item1 = new QStandardItem("track number: " + QString::number(numberAirplane));
+//        item1->setEditable(false);
+//        QBrush brush(color); // создаем объект QBrush с цветом
+//        item1->setForeground(brush); // устанавливаем красный цвет для надписи элемента
+//
+//        // Добавление элементов в модель
+//        m_model->appendRow(item1);
+//
+//        // Установка модели для QListView
+//        m_listWidget->setModel(m_model);
 
-        // Добавление элементов в модель
-        m_model->appendRow(item1);
+        QLabel *label = new QLabel("track number: " + QString::number(numberAirplane), m_listWidget);
+        label->setStyleSheet("color: " + colors[numberAirplane % 5]);
+        label->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(label, &QWidget::customContextMenuRequested, this, &MyScene::showContextMenu);
 
-        // Установка модели для QListView
-        m_listView->setModel(m_model);
+        m_listWidget->setItemWidget(new QListWidgetItem(m_listWidget), label);
     }
 
     ItemEllipse *ellipse = new ItemEllipse(x, y, w, h, m_numberItem, numberAirplane, this);
@@ -92,5 +100,53 @@ const QVector<Airplane *> &MyScene::getMAirplanes() const {
 
 QObject *MyScene::getMParent() const {
     return m_parent;
+}
+
+void MyScene::showContextMenu(QPoint pos) {
+    QLabel *label = dynamic_cast<QLabel *>(sender());
+    QString str = label->text();
+    QStringList spl = str.split(':');
+    m_numberChoose = spl.at(1).toInt();
+    qDebug() << m_numberChoose;
+
+    /* Создаем объект контекстного меню */
+    QMenu *menu = new QMenu((QWidget *) m_parent);
+    /* Создаём действия для контекстного меню */
+    QAction *showInfo = new QAction(tr("Подробнее"), this);
+
+    QAction *hide = new QAction(tr("Скрыть"), this);
+    connect(hide, &QAction::triggered, this, &MyScene::hideTravel);
+
+    QAction *show = new QAction(tr("Показать"), this);
+    connect(show, &QAction::triggered, this, &MyScene::showTravel);
+    /* Подключаем СЛОТы обработчики для действий контекстного меню */
+    /* Устанавливаем действия в меню */
+    menu->addAction(showInfo);
+    menu->addAction(hide);
+    menu->addAction(show);
+    /* Вызываем контекстное меню */
+    menu->popup(m_listWidget->viewport()->mapToGlobal(pos));
+}
+
+void MyScene::hideTravel() {
+    qDebug() << "зашла в скрыть";
+    Airplane *airplane = m_airplanes.at(m_numberChoose);
+    QVector<ItemEllipse *> vec = airplane->getMEllipseVec();
+    for (int i = 0; i < vec.size(); i++) {
+        vec.at(i)->setVisible(false);
+    }
+
+//    dynamic_cast<QAction *> (sender())->setEnabled(false);
+}
+
+void MyScene::showTravel() {
+    qDebug() << "зашла в показать";
+    Airplane *airplane = m_airplanes.at(m_numberChoose);
+    for (auto iterator1 = airplane->getMEllipseVec().begin();
+         iterator1 < airplane->getMEllipseVec().end(); iterator1++) {
+        (*iterator1)->setVisible(true);
+    }
+
+//    dynamic_cast<QAction *> (sender())->setEnabled(true);
 }
 

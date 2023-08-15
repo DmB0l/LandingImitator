@@ -10,6 +10,8 @@
 #include <QPen>
 #include <QUdpSocket>
 #include <QScrollBar>
+#include <QLabel>
+
 
 #include "../../../ProtocolPriFolder/protocol.h"
 #include "src/scene/MyScene.h"
