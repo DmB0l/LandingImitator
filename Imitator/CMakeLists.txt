@@ -18,12 +18,12 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 add_executable(Imitator
-        src/main/main.cpp
-        src/mainWindow/mainwindow.cpp
-        src/mainWindow/mainwindow.h
-        src/mainWindow/mainwindow.ui
-        src/TravelAirplane.cpp
-        src/TravelAirplane.h)
+        src/main/Main.cpp
+        src/mainWindow/MainWindow.cpp
+        src/mainWindow/MainWindow.h
+        src/mainWindow/MainWindow.ui
+        src/travelAirplane/TravelAirplane.cpp
+        src/travelAirplane/TravelAirplane.h)
 
 target_link_libraries(Imitator
         Qt5::Core

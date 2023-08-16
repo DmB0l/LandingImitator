@@ -1,11 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "../../../ProtocolPriFolder/protocol.h"
 #include <QMainWindow>
 #include <QUdpSocket>
+#include <QTime>
+#include <QTimer>
+#include <QtMath>
 
-#include "../TravelAirplane.h"
+#include "../../../ProtocolPriFolder/protocol.h"
+#include "src/travelAirplane/TravelAirplane.h"
 
 
 QT_BEGIN_NAMESPACE

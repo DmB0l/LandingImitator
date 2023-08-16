@@ -1,11 +1,8 @@
 #include <QLabel>
 #include "MyScene.h"
-#include "src/AirplaneItemListView.h"
 
-MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget),
-                                                             m_parent(parent) {
+MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget){
     createGrid();
-    m_model = new QStandardItemModel(this);
 }
 
 void MyScene::createGrid() {
@@ -32,22 +29,22 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
     QColor color(colors[numberAirplane % 5]);
     Airplane *airplane = nullptr;
 
+    // костыль для случая, если имитатор начнет не с первого номера самолета
+    // (заполнение вектора пустыми самолетами до номера под которым началось моделирование)
     while (m_numberAirplane < numberAirplane) {
-        airplane = new Airplane(m_numberItem);
+        airplane = new Airplane(m_numberAirplane);
         m_airplanes.push_back(airplane);
         m_numberAirplane++;
     }
 
-    if (m_airplanes.size() != 0) {
+    // если в векторе уже окажется самолет под номером, который сейчас моделируется
+    // (перезапись существующего самолета из коллекции на моделирующийся)
+    if (!m_airplanes.empty()) {
         airplane = m_airplanes.last();
-//        for(auto iterator = m_airplanes.begin(); iterator < m_airplanes.end(); iterator++) {
-//            Airplane *air = (*iterator);
-//            if(air->getNumber() == numberAirplane) {
-//                Airplane *newAir = new Airplane(numberAirplane);
-//                airplane = newAir;
-//                (*iterator) = newAir;
-////                iterator = m_airplanes.erase(iterator);
-////                airplane = air;
+//        for(int i = 0; i < m_airplanes.size(); i++) {
+//            if(m_airplanes.at(i)->getNumber() == numberAirplane) {
+//                m_airplanes.insert(i, new Airplane(numberAirplane));
+//                airplane = m_airplanes.at(i);
 //                break;
 //            }
 //        }
@@ -58,19 +55,6 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
         m_airplanes.push_back(airplane);
         m_numberAirplane++;
         m_numberItem = 0;
-
-        // Создание элементов
-//        auto *item1 = new AirplaneItemListView("track number: " + QString::number(numberAirplane));
-////        QStandardItem *item1 = new QStandardItem("track number: " + QString::number(numberAirplane));
-//        item1->setEditable(false);
-//        QBrush brush(color); // создаем объект QBrush с цветом
-//        item1->setForeground(brush); // устанавливаем красный цвет для надписи элемента
-//
-//        // Добавление элементов в модель
-//        m_model->appendRow(item1);
-//
-//        // Установка модели для QListView
-//        m_listWidget->setModel(m_model);
 
         QLabel *label = new QLabel("track number: " + QString::number(numberAirplane), m_listWidget);
         label->setStyleSheet("color: " + colors[numberAirplane % 5]);
@@ -98,10 +82,6 @@ const QVector<Airplane *> &MyScene::getMAirplanes() const {
     return m_airplanes;
 }
 
-QObject *MyScene::getMParent() const {
-    return m_parent;
-}
-
 void MyScene::showContextMenu(QPoint pos) {
     QLabel *label = dynamic_cast<QLabel *>(sender());
     QString str = label->text();
@@ -110,7 +90,7 @@ void MyScene::showContextMenu(QPoint pos) {
     qDebug() << m_numberChoose;
 
     /* Создаем объект контекстного меню */
-    QMenu *menu = new QMenu((QWidget *) m_parent);
+    QMenu *menu = new QMenu((QWidget *) parent());
     /* Создаём действия для контекстного меню */
     QAction *showInfo = new QAction(tr("Подробнее"), this);
 

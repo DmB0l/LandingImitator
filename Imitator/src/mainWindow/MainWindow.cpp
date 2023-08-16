@@ -1,11 +1,6 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "src/TravelAirplane.h"
-
-#include <QDebug>
-#include <QTime>
-#include <QTimer>
-#include <QtMath>
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
+#include "src/travelAirplane/TravelAirplane.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);

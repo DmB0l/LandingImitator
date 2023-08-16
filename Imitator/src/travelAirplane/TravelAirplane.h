@@ -7,7 +7,7 @@
 
 #include <QObject>
 #include <QUdpSocket>
-#include "../../ProtocolPriFolder/protocol.h"
+#include "../../../ProtocolPriFolder/protocol.h"
 
 
 class TravelAirplane : public QObject {

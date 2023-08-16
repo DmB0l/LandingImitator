@@ -26,16 +26,12 @@ class MyScene : public QGraphicsScene {
 
     explicit MyScene(QObject *parent = nullptr, QListWidget *listWidget = nullptr);
 
-    QObject *getMParent() const;
-
     void createGrid();
     void drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplane);
 
     const QVector<Airplane *> &getMAirplanes() const;
 
 private:
-    QObject *m_parent = nullptr;
-    QStandardItemModel *m_model = nullptr;
     QListWidget *m_listWidget = nullptr;
     int m_numberItem = 0;
     int m_numberAirplane = 0;
