@@ -26,6 +26,8 @@ class MyScene : public QGraphicsScene {
 
     explicit MyScene(QObject *parent = nullptr, QListWidget *listWidget = nullptr);
 
+    ~MyScene() override;
+
     void createGrid();
     void drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplane);
 
@@ -34,14 +36,17 @@ class MyScene : public QGraphicsScene {
 private:
     QListWidget *m_listWidget = nullptr;
     int m_numberItem = 0;
-    int m_numberAirplane = 0;
+    int m_prevNumberAirplane = 0;
     int m_numberChoose = 0;
 
+    QList<int> m_prevNumberList;
     QVector<Airplane*> m_airplanes;
 
 private slots:
     void hideTravel();
     void showTravel();
+    void deleteTravel();
+    void showInfo();
     void showContextMenu(QPoint pos);
 };
 

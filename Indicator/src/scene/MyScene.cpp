@@ -1,8 +1,13 @@
 #include <QLabel>
 #include "MyScene.h"
 
-MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget){
+MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget) {
     createGrid();
+    m_airplanes.reserve(256);
+    for (int i = 0; i < 256; i++) {
+        m_airplanes.push_back(new Airplane(i));
+    }
+    m_prevNumberList.push_back(0);
 }
 
 void MyScene::createGrid() {
@@ -27,41 +32,26 @@ void MyScene::createGrid() {
 
 void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplane) {
     QColor color(colors[numberAirplane % 5]);
-    Airplane *airplane = nullptr;
+    Airplane *airplane = m_airplanes.at(numberAirplane);
 
-    // костыль для случая, если имитатор начнет не с первого номера самолета
-    // (заполнение вектора пустыми самолетами до номера под которым началось моделирование)
-    while (m_numberAirplane < numberAirplane) {
-        airplane = new Airplane(m_numberAirplane);
-        m_airplanes.push_back(airplane);
-        m_numberAirplane++;
-    }
-
-    // если в векторе уже окажется самолет под номером, который сейчас моделируется
-    // (перезапись существующего самолета из коллекции на моделирующийся)
-    if (!m_airplanes.empty()) {
-        airplane = m_airplanes.last();
-//        for(int i = 0; i < m_airplanes.size(); i++) {
-//            if(m_airplanes.at(i)->getNumber() == numberAirplane) {
-//                m_airplanes.insert(i, new Airplane(numberAirplane));
-//                airplane = m_airplanes.at(i);
-//                break;
-//            }
-//        }
-    }
-
-    if (airplane == nullptr || airplane->getNumber() != numberAirplane) {
-        airplane = new Airplane(numberAirplane);
-        m_airplanes.push_back(airplane);
-        m_numberAirplane++;
+    if (m_prevNumberAirplane != numberAirplane) {
+        airplane = m_airplanes.at(numberAirplane);
+        airplane->eraseDataVec();
+        m_prevNumberAirplane = numberAirplane;
         m_numberItem = 0;
 
-        QLabel *label = new QLabel("track number: " + QString::number(numberAirplane), m_listWidget);
-        label->setStyleSheet("color: " + colors[numberAirplane % 5]);
-        label->setContextMenuPolicy(Qt::CustomContextMenu);
-        connect(label, &QWidget::customContextMenuRequested, this, &MyScene::showContextMenu);
+        if (airplane->getLabel() == nullptr && airplane->getItemWidget() == nullptr) {
+            QLabel *label = new QLabel("track number: " + QString::number(numberAirplane), m_listWidget);
+            label->setStyleSheet("color: " + colors[numberAirplane % 5]);
+            label->setContextMenuPolicy(Qt::CustomContextMenu);
+            connect(label, &QWidget::customContextMenuRequested, this, &MyScene::showContextMenu);
 
-        m_listWidget->setItemWidget(new QListWidgetItem(m_listWidget), label);
+            QListWidgetItem *itemWidget = new QListWidgetItem(m_listWidget);
+            m_listWidget->setItemWidget(itemWidget, label);
+            airplane->setLabel(label);
+            airplane->setItemWidget(itemWidget);
+        }
+        update();
     }
 
     ItemEllipse *ellipse = new ItemEllipse(x, y, w, h, m_numberItem, numberAirplane, this);
@@ -99,11 +89,15 @@ void MyScene::showContextMenu(QPoint pos) {
 
     QAction *show = new QAction(tr("Показать"), this);
     connect(show, &QAction::triggered, this, &MyScene::showTravel);
+
+    QAction *del = new QAction(tr("Удалить"), this);
+    connect(del, &QAction::triggered, this, &MyScene::deleteTravel);
     /* Подключаем СЛОТы обработчики для действий контекстного меню */
     /* Устанавливаем действия в меню */
     menu->addAction(showInfo);
     menu->addAction(hide);
     menu->addAction(show);
+    menu->addAction(del);
     /* Вызываем контекстное меню */
     menu->popup(m_listWidget->viewport()->mapToGlobal(pos));
 }
@@ -128,5 +122,25 @@ void MyScene::showTravel() {
     }
 
 //    dynamic_cast<QAction *> (sender())->setEnabled(true);
+}
+
+
+
+MyScene::~MyScene() {
+    m_airplanes.clear();
+}
+
+void MyScene::deleteTravel() {
+    qDebug() << "зашла в удалить";
+    Airplane *airplane = m_airplanes.at(m_numberChoose);
+    airplane->eraseDataVec();
+    airplane->eraseLabel();
+
+    m_listWidget->removeItemWidget(airplane->getItemWidget());
+    airplane->eraseWidget();
+}
+
+void MyScene::showInfo() {
+
 }
 
