@@ -34,10 +34,10 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
     QColor color(colors[numberAirplane % 5]);
     Airplane *airplane = m_airplanes.at(numberAirplane);
 
-    if (m_prevNumberAirplane != numberAirplane) {
+    if (m_prevNumberList.last() != numberAirplane) {
         airplane = m_airplanes.at(numberAirplane);
         airplane->eraseDataVec();
-        m_prevNumberAirplane = numberAirplane;
+        m_prevNumberList.push_back( numberAirplane);
         m_numberItem = 0;
 
         if (airplane->getLabel() == nullptr && airplane->getItemWidget() == nullptr) {
@@ -48,6 +48,11 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
 
             QListWidgetItem *itemWidget = new QListWidgetItem(m_listWidget);
             m_listWidget->setItemWidget(itemWidget, label);
+
+            // Сортируем элементы в алфавитном порядке
+            m_listWidget->setSortingEnabled(true);
+            m_listWidget->sortItems();
+
             airplane->setLabel(label);
             airplane->setItemWidget(itemWidget);
         }
@@ -138,6 +143,12 @@ void MyScene::deleteTravel() {
 
     m_listWidget->removeItemWidget(airplane->getItemWidget());
     airplane->eraseWidget();
+
+    if(m_prevNumberList.last() == m_numberChoose) {
+        m_prevNumberList.pop_back();
+    }
+
+    m_listWidget->sortItems();
 }
 
 void MyScene::showInfo() {
