@@ -12,13 +12,6 @@ class MyView : public QGraphicsView {
 
    protected:
     void wheelEvent(QWheelEvent *event) override;
-
-//    void mouseReleaseEvent(QMouseEvent *event) override;
-//    void mousePressEvent(QMouseEvent *event) override;
-
-private:
-    QWidget *widget = nullptr;
-
 };
 
 #endif  // MYVIEW_H

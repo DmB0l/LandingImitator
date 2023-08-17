@@ -18,6 +18,8 @@ public:
                             double distance,
                             double timeToTravel, double speed, double period, quint8 trackNumber);
 
+    ~TravelAirplane() override;
+
 public slots:
 
     void initTimer();
@@ -52,7 +54,7 @@ private:
 
     double m_timeToTravel = 0;
 
-
+    QUdpSocket *m_socket = nullptr;
     QTimer *m_timer = nullptr;
 };
 

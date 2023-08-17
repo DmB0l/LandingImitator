@@ -32,6 +32,9 @@ add_executable(Indicator
         src/itemText/ItemText.h
         src/airplane/Airplane.cpp
         src/airplane/Airplane.h
+        src/modalInfoWindow/ModalInfoWindow.cpp
+        src/modalInfoWindow/ModalInfoWindow.h
+        src/modalInfoWindow/ModalInfoWindow.ui
 )
 
 target_link_libraries(Indicator

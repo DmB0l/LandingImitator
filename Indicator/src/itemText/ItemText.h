@@ -11,7 +11,7 @@
 
 class ItemText : public QGraphicsTextItem {
 public:
-    ItemText(qreal x, qreal y, qreal w, qreal h, int numberAirplane);
+    ItemText(qreal x, qreal y, qreal w, qreal h, int numberAirplane, quint8 mod);
 
     QRectF boundingRect() const override;
 
@@ -19,6 +19,7 @@ public:
 
 private:
     int m_numberAirplane = 0;
+    quint8 m_mod = 0;
 
     qreal m_x = 0;
     qreal m_y = 0;

@@ -14,6 +14,9 @@ ItemEllipse::ItemEllipse(qreal x, qreal y, qreal w, qreal h, int numberEllipse, 
     setAcceptHoverEvents(true);
 }
 
+ItemEllipse::~ItemEllipse() {
+}
+
 QRectF ItemEllipse::boundingRect() const {
     return QRectF(m_x, m_y, m_w, m_h);
 }
@@ -23,11 +26,6 @@ void ItemEllipse::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     painter->setBrush(QBrush(Qt::red));
     painter->setRenderHint(QPainter::Antialiasing);
     painter->drawEllipse(m_x, m_y, m_w, m_h);
-//    MyScene *scene = (MyScene *) parent;
-//    MyView *view = (MyView *) scene->getMParent();
-//    view->setDragMode(QGraphicsView::NoDrag); // отключаем режим перетаскивания
-//    view->centerOn(m_x, m_y);
-//    view->setDragMode(QGraphicsView::ScrollHandDrag); // включаем обратно режим перетаскивания
 }
 
 void ItemEllipse::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
@@ -53,3 +51,12 @@ void ItemEllipse::hoverLeaveEvent(QGraphicsSceneHoverEvent *event) {
 void ItemEllipse::setColor(const QColor &color) {
     ItemEllipse::m_color = color;
 }
+
+qreal ItemEllipse::getMX() const {
+    return m_x;
+}
+
+qreal ItemEllipse::getMY() const {
+    return m_y;
+}
+

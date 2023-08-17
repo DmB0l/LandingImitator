@@ -18,9 +18,15 @@ public:
     ItemEllipse(qreal x, qreal y, qreal w, qreal h, int numberEllipse, int numberAirplane,
                 QGraphicsScene *parent = nullptr);
 
+    ~ItemEllipse() override;
+
     QRectF boundingRect() const override;
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
+
+    qreal getMX() const;
+
+    qreal getMY() const;
 
     void setColor(const QColor &color);
 

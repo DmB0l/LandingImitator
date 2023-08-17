@@ -4,9 +4,9 @@
 #include <QtCore>
 
 struct message {
-    quint64 x = 0;
-    quint64 y = 0;
-    quint64 z = 0;
+    qint64 x = 0;
+    qint64 y = 0;
+    qint64 z = 0;
 
     quint8 trackNumber = 0;
 };

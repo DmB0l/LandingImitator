@@ -19,8 +19,27 @@ TravelAirplane::TravelAirplane(double startX, double startY, double startZ, doub
 
 }
 
+TravelAirplane::~TravelAirplane() {
+    delete m_socket;
+    delete m_timer;
+}
+
 void TravelAirplane::initTimer() {
     m_timer = new QTimer(this);
+
+    m_socket = new QUdpSocket();
+    m_socket->bind(QHostAddress::LocalHost, 1234);
+
+    message mess;
+    mess.x = m_startX;
+    mess.y = m_startY;
+    mess.z = m_startZ;
+    mess.trackNumber = m_trackNumber;
+
+    QByteArray arr;
+    QDataStream stream(&arr, QIODevice::WriteOnly);
+    stream << mess.x << mess.y << mess.z << mess.trackNumber;
+    m_socket->writeDatagram(arr, QHostAddress::LocalHost, 5678);
 
     connect(m_timer, &QTimer::timeout, this, &TravelAirplane::calc);
 
@@ -29,9 +48,6 @@ void TravelAirplane::initTimer() {
 }
 
 void TravelAirplane::calc() {
-    QUdpSocket *m_socket = new QUdpSocket();
-    m_socket->bind(QHostAddress::LocalHost, 1234);
-
     m_timeTraveled += m_period;
     m_distanceTraveled += m_speed * m_period;
 
@@ -62,3 +78,5 @@ void TravelAirplane::stop() {
     m_timer->stop();
     emit finished(true);
 }
+
+

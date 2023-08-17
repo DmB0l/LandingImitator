@@ -20,10 +20,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::goStart() {
-    if (m_timer != nullptr) {
-        m_timer->stop();
-    }
-
     ui->PB_stop->setEnabled(true);
     ui->PB_deleteAll->setEnabled(false);
     ui->PB_deleteTrackNumber->setEnabled(false);
@@ -31,41 +27,37 @@ void MainWindow::goStart() {
 
     ui->progB->setValue(0);
 
-//    m_timeTraveled = 0;
-//    m_distanceTraveled = 0;
-//    m_persentageTraveled = 0;
-
     m_trackNumber++;
 
     ui->L_trackNumberCounter->setText(QString::number(m_trackNumber));
 
-    m_speed = ui->DSB_speed->value();
-    m_period = static_cast<int>(ui->DSB_period->value());
+    double speed = ui->DSB_speed->value();
+    double period = static_cast<int>(ui->DSB_period->value());
 
-    m_startX = ui->DSB_firstX->value();
-    m_startY = ui->DSB_firstY->value();
-    m_startZ = ui->DSB_firstZ->value();
+    double startX = ui->DSB_firstX->value();
+    double startY = ui->DSB_firstY->value();
+    double startZ = ui->DSB_firstZ->value();
 
-    m_finishX = ui->DSB_secondX->value();
-    m_finishY = ui->DSB_secondY->value();
-    m_finishZ = ui->DSB_secondZ->value();
+    double finishX = ui->DSB_secondX->value();
+    double finishY = ui->DSB_secondY->value();
+    double finishZ = ui->DSB_secondZ->value();
 
-    m_distance = calcDistance(m_startX, m_startY, m_startZ, m_finishX, m_finishY, m_finishZ);
+    double distance = calcDistance(startX, startY, startZ, finishX, finishY, finishZ);
 
-
-    if (m_distance != 0) {
-        ui->progB->setMaximum(m_distance);
+    if (distance != 0) {
+        ui->progB->setMaximum(distance);
     }
 
-    if (m_speed != 0) {
-        m_timeToTravel = m_distance / m_speed;
+    double timeToTravel = 0;
+    if (speed != 0) {
+        timeToTravel = distance / speed;
     }
 
-    qDebug() << "distance: " << m_distance;
-    qDebug() << "time to travel: " << m_distance << '\n';
+    qDebug() << "distance: " << distance;
+    qDebug() << "time to travel: " << distance << '\n';
 
-    TravelAirplane *travelAirplane = new TravelAirplane(m_startX, m_startY, m_startZ, m_finishX, m_finishY,
-                                                        m_finishZ, m_distance, m_timeToTravel, m_speed, m_period, m_trackNumber);
+    TravelAirplane *travelAirplane = new TravelAirplane(startX, startY, startZ, finishX, finishY,
+                                                        finishZ, distance, timeToTravel, speed, period, m_trackNumber);
 
     connect(ui->PB_stop, &QPushButton::clicked, travelAirplane, &TravelAirplane::stop);
 

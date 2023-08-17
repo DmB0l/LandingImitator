@@ -1,13 +1,19 @@
 #include <QLabel>
 #include "MyScene.h"
 
-MyScene::MyScene(QObject *parent, QListWidget *listWidget) : QGraphicsScene(parent), m_listWidget(listWidget) {
+MyScene::MyScene(QObject *parent, QListWidget *listWidget, quint8 mod) : QGraphicsScene(parent),
+                                                                         m_listWidget(listWidget), m_mod(mod) {
     createGrid();
     m_airplanes.reserve(256);
     for (int i = 0; i < 256; i++) {
         m_airplanes.push_back(new Airplane(i));
     }
     m_prevNumberList.push_back(0);
+}
+
+MyScene::~MyScene() {
+    m_airplanes.clear();
+//    delete m_listWidget;
 }
 
 void MyScene::createGrid() {
@@ -37,7 +43,7 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
     if (m_prevNumberList.last() != numberAirplane) {
         airplane = m_airplanes.at(numberAirplane);
         airplane->eraseDataVec();
-        m_prevNumberList.push_back( numberAirplane);
+        m_prevNumberList.push_back(numberAirplane);
         m_numberItem = 0;
 
         if (airplane->getLabel() == nullptr && airplane->getItemWidget() == nullptr) {
@@ -59,11 +65,12 @@ void MyScene::drawTrack(qreal x, qreal y, qreal w, qreal h, quint8 numberAirplan
         update();
     }
 
+
     ItemEllipse *ellipse = new ItemEllipse(x, y, w, h, m_numberItem, numberAirplane, this);
     ellipse->setColor(color);
     airplane->getMEllipseVec().push_back(ellipse);
 
-    ItemText *textItem = new ItemText(x + 5, y - 15, 0, 00, numberAirplane);
+    ItemText *textItem = new ItemText(x, y, 0, 0, numberAirplane, m_mod);
     airplane->getMTextVec().push_back(textItem);
     textItem->setVisible(false);
 
@@ -88,6 +95,7 @@ void MyScene::showContextMenu(QPoint pos) {
     QMenu *menu = new QMenu((QWidget *) parent());
     /* Создаём действия для контекстного меню */
     QAction *showInfo = new QAction(tr("Подробнее"), this);
+    connect(showInfo, &QAction::triggered, this, &MyScene::showInfo);
 
     QAction *hide = new QAction(tr("Скрыть"), this);
     connect(hide, &QAction::triggered, this, &MyScene::hideTravel);
@@ -129,12 +137,6 @@ void MyScene::showTravel() {
 //    dynamic_cast<QAction *> (sender())->setEnabled(true);
 }
 
-
-
-MyScene::~MyScene() {
-    m_airplanes.clear();
-}
-
 void MyScene::deleteTravel() {
     qDebug() << "зашла в удалить";
     Airplane *airplane = m_airplanes.at(m_numberChoose);
@@ -144,7 +146,7 @@ void MyScene::deleteTravel() {
     m_listWidget->removeItemWidget(airplane->getItemWidget());
     airplane->eraseWidget();
 
-    if(m_prevNumberList.last() == m_numberChoose) {
+    if (m_prevNumberList.last() == m_numberChoose) {
         m_prevNumberList.pop_back();
     }
 
@@ -152,6 +154,7 @@ void MyScene::deleteTravel() {
 }
 
 void MyScene::showInfo() {
-
+    ModalInfoWindow *modalInfoWindow = new ModalInfoWindow(m_airplanes.at(m_numberChoose));
+    modalInfoWindow->show();
 }
 

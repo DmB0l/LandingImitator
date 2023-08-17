@@ -1,6 +1,6 @@
 #include "MyView.h"
 
-MyView::MyView(QWidget *parent) : QGraphicsView(parent), widget(parent) {
+MyView::MyView(QWidget *parent) : QGraphicsView(parent) {
     setTransformationAnchor(QGraphicsView::AnchorViewCenter);
     setDragMode(QGraphicsView::ScrollHandDrag);
 }
@@ -34,15 +34,3 @@ void MyView::wheelEvent(QWheelEvent *event) {
 
     event->accept();
 }
-
-//void MyView::mousePressEvent(QMouseEvent *event) {
-//    if (event->button() == Qt::LeftButton) {
-//        widget->setCursor(Qt::OpenHandCursor);
-//    }
-//    QGraphicsView::mousePressEvent(event);
-//}
-//
-//void MyView::mouseReleaseEvent(QMouseEvent *event) {
-//    widget->setCursor(Qt::OpenHandCursor);
-//    QGraphicsView::mouseReleaseEvent(event);
-//}
