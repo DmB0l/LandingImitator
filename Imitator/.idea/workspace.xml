@@ -20,28 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d23b64b-16f9-4181-946d-68a255b7e336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/modalInfoWindow/ModalInfoWindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/modalInfoWindow/ModalInfoWindow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Indicator/src/modalInfoWindow/ModalInfoWindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainWindow/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainWindow/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/travelAirplane/TravelAirplane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/travelAirplane/TravelAirplane.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/travelAirplane/TravelAirplane.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/travelAirplane/TravelAirplane.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemEllipse/ItemEllipse.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/itemText/ItemText.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/mainWindow/MainWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/scene/MyScene.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/view/MyView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/view/MyView.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Indicator/src/view/MyView.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Indicator/src/view/MyView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProtocolPriFolder/protocol.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ProtocolPriFolder/protocol.h" afterDir="false" />
-    </list>
+    <list default="true" id="1d23b64b-16f9-4181-946d-68a255b7e336" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +98,7 @@
       <workItem from="1692004770506" duration="1000" />
       <workItem from="1692165605331" duration="2479000" />
       <workItem from="1692195152030" duration="647000" />
-      <workItem from="1692252313142" duration="5245000" />
+      <workItem from="1692252313142" duration="5533000" />
     </task>
     <servers />
   </component>
