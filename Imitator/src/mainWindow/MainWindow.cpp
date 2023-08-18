@@ -6,15 +6,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     connect(ui->PB_start, &QPushButton::clicked, this, &MainWindow::goStart);
-    connect(ui->PB_deleteTrackNumber, &QPushButton::clicked, this, &MainWindow::onDeleteTrackNumber);
+    connect(ui->PB_deleteTrackNumber, &QPushButton::clicked, this,&MainWindow::onDeleteTrackNumber);
     connect(ui->PB_deleteAll, &QPushButton::clicked, this, &MainWindow::onDeleteAll);
-
 
     ui->progB->setValue(0);
     ui->PB_stop->setEnabled(false);
-
-//    m_socket = new QUdpSocket();
-//    m_socket->bind(QHostAddress::LocalHost, 1234);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -32,7 +28,7 @@ void MainWindow::goStart() {
     ui->L_trackNumberCounter->setText(QString::number(m_trackNumber));
 
     double speed = ui->DSB_speed->value();
-    double period = static_cast<int>(ui->DSB_period->value());
+    double period = ui->DSB_period->value();
 
     double startX = ui->DSB_firstX->value();
     double startY = ui->DSB_firstY->value();
@@ -57,7 +53,8 @@ void MainWindow::goStart() {
     qDebug() << "time to travel: " << distance << '\n';
 
     TravelAirplane *travelAirplane = new TravelAirplane(startX, startY, startZ, finishX, finishY,
-                                                        finishZ, distance, timeToTravel, speed, period, m_trackNumber);
+                                                        finishZ, distance,
+                                                        timeToTravel, speed, period, m_trackNumber);
 
     connect(ui->PB_stop, &QPushButton::clicked, travelAirplane, &TravelAirplane::stop);
 
@@ -110,7 +107,6 @@ void MainWindow::onDeleteTrackNumber() {
 }
 
 void MainWindow::unlockButtons() {
-//    m_timer->stop();
     ui->PB_stop->setEnabled(false);
     ui->PB_start->setEnabled(true);
     ui->PB_deleteAll->setEnabled(true);

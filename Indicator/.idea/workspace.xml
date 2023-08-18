@@ -22,6 +22,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e8ca94c4-3727-4749-9ee6-45097f6ebc6e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/src/mainWindow/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/mainWindow/MainWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Imitator/src/mainWindow/MainWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../Imitator/src/mainWindow/MainWindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modalInfoWindow/ModalInfoWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/modalInfoWindow/ModalInfoWindow.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +80,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Indicator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Indicator" TARGET_NAME="Indicator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Indicator" RUN_TARGET_NAME="Indicator">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Indicator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Indicator" TARGET_NAME="Indicator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Indicator" RUN_TARGET_NAME="Indicator">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -100,7 +104,8 @@
       <workItem from="1691734459343" duration="15518000" />
       <workItem from="1691756189892" duration="4746000" />
       <workItem from="1692166285555" duration="4472000" />
-      <workItem from="1692252321309" duration="14406000" />
+      <workItem from="1692252321309" duration="17694000" />
+      <workItem from="1692345498909" duration="1361000" />
     </task>
     <servers />
   </component>

@@ -168,7 +168,7 @@ QProgressBar::chunk {
           <double>1.000000000000000</double>
          </property>
          <property name="maximum">
-          <double>1000.990000000000009</double>
+          <double>1000.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -198,7 +198,10 @@ QProgressBar::chunk {
        <item row="2" column="3">
         <widget class="QDoubleSpinBox" name="DSB_secondZ">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>40000.000000000000000</double>
          </property>
          <property name="value">
           <double>0.000000000000000</double>
@@ -208,10 +211,10 @@ QProgressBar::chunk {
        <item row="2" column="1">
         <widget class="QDoubleSpinBox" name="DSB_secondX">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
          </property>
          <property name="maximum">
-          <double>100000.990000000005239</double>
+          <double>40000.000000000000000</double>
          </property>
          <property name="value">
           <double>0.000000000000000</double>
@@ -221,7 +224,7 @@ QProgressBar::chunk {
        <item row="1" column="2">
         <widget class="QDoubleSpinBox" name="DSB_firstY">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
          </property>
          <property name="value">
           <double>0.000000000000000</double>
@@ -244,10 +247,10 @@ QProgressBar::chunk {
        <item row="1" column="1">
         <widget class="QDoubleSpinBox" name="DSB_firstX">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
          </property>
          <property name="maximum">
-          <double>100000.990000000005239</double>
+          <double>40000.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -291,7 +294,7 @@ QProgressBar::chunk {
        <item row="1" column="3">
         <widget class="QDoubleSpinBox" name="DSB_firstZ">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
          </property>
          <property name="value">
           <double>0.000000000000000</double>
@@ -346,7 +349,10 @@ QProgressBar::chunk {
        <item row="2" column="2">
         <widget class="QDoubleSpinBox" name="DSB_secondY">
          <property name="minimum">
-          <double>-100000.000000000000000</double>
+          <double>-40000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>40000.000000000000000</double>
          </property>
          <property name="value">
           <double>0.000000000000000</double>

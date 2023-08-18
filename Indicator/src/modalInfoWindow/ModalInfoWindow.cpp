@@ -36,7 +36,7 @@ ModalInfoWindow::ModalInfoWindow(Airplane *airplane, QWidget *parent) :
 
             ui->TW->setItem(row, 1, new QTableWidgetItem(
                     "(" + QString::number((*it)->getMX() - MyScene::SIZE_SQUARE + 2) + "; " +
-                    QString::number((*it)->getMY() - MyScene::SIZE_SQUARE + 2) + ")"));
+                    QString::number(-((*it)->getMY() - MyScene::SIZE_SQUARE + 2)) + ")"));
             row++;
         }
     }
